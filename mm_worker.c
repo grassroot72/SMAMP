@@ -95,7 +95,7 @@ s_mm_handle_request(mm_engine_t *self, zmsg_t *request, zframe_t *reply_to)
   operation = zmsg_popstr(request);
 
   /*
-   * Here the data be processed should be added, and the processing logic
+   * Here the data to be processed should be added, and the processing logic
    * and algorithm should be presented, but for this demo. I only use the
    * data from the client directly to perform mongodb CRUD
    */
