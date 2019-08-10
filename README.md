@@ -72,7 +72,10 @@ It is quite flexible to add more features to SMAMP.
 
 ### *Performance Turning*
 
-To improve performance of microservices, Redis server can be added as the cache.
+To improve performance of microservices, multiple workers which provide the same
+microservices can be put together.
+
+In addition to use multiple workers, Redis server can be added as the cache.
 For DB services, Redis server can also be applied to improve **read** performace.
 
 If Titanic Pattern is used in SMAMP, some recommendations can be adopted.
