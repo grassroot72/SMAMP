@@ -54,8 +54,8 @@ SMAMP uses 2 brokers. One of them forwards the clients' requests to application
 workers, and the other connects to the both application workers and DB workers.
 In SMAMP, the application broker acts as an ***application layer*** which dispatches
 the specific requests to the respective workers which provide specific microservices.
-The DB broker acts as an ***infrastructure layer*** which replays the requests from
-the microservices to SQL or NoSQL workers.
+The DB broker acts as an ***infrastructure layer*** which relays the requests from
+the microservices to the SQL or NoSQL workers.
 
 SMAMP aims to align with the **Domain-Driven Design** principle. In this PoC project,
 I use a "MM service" to simulate some functions in the Material Management Module
