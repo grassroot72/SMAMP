@@ -24,7 +24,7 @@ It has the following features:
 Some well-known companies are using ZeroMQ, for example, AT&T, Cisco, EA, NASA, 
 Samsung Electronics, Microsoft.
 
-### Majordomo Pattern - Service-Oriented Reliable Queuing
+### *Majordomo Pattern - Service-Oriented Reliable Queuing*
 <img src="./Screenshot/Majordomo.jpg" width="480px">
 
 Majordomo involves 3 parts, a client, a broker and a worker. It is a 
@@ -33,7 +33,7 @@ requests that the client sends, and asks workers to register for specific
 services. The broker, as its name implies, takes requests from clients and
 forwards the requests to the respective workers with specific "service name". 
 
-### Titanic Pattern - Disconnected Reliability
+### *Titanic Pattern - Disconnected Reliability*
 <img src="./Screenshot/Titanic.jpg" width="480px">
 
 Majordomo is a "reliable" message broker, but in reality, for all the
