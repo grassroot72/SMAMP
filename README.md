@@ -62,6 +62,18 @@ of the ERP software. I use MongoDB as the database server which is connected to
 the "NoSQL service" worker. Inside the "MM service", the **CRUD** operations of
 MongoDB are implemented.
 
+### *Feature Extending*
+
+It is quite flexible to add more features to SMAMP.
+
+  - Apply Titanic Pattern to microservices or DB services or to both.
+  - Add Redis as cache to microservices or DB services or to both.
+
 ### *Performance Turning*
 
+To improve performance of microservices, Redis server can be added as the cache.
+For DB services, Redis server can also be applied to improve **read** performace.
+
+If Titanic Pattern is used in SMAMP, linux Page Cache can be considered to improve
+the IO performace. This technique is already used in Apache Kafka.
  
