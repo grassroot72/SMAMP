@@ -1,4 +1,4 @@
-# Simple Microservice Architecture using Majordomo Protocol
+# Simple Microservice Architecture using Majordomo Protocol (SMAMP)
 
 This is a PoC(Prove of Concept) project to show that microservices can be 
 achieved using ZeroMQ's Majordomo Pattern.
@@ -25,7 +25,6 @@ Some well-known companies are using ZeroMQ, for example, AT&T, Cisco, EA, NASA,
 Samsung Electronics, Microsoft.
 
 ### Majordomo Pattern - Service-Oriented Reliable Queuing
-
 <img src="./Screenshot/Majordomo.jpg" width="480px">
 
 Majordomo involves 3 parts, a client, a broker and a worker. It is a 
@@ -47,5 +46,9 @@ The office ZeroMQ guide only includes a Titanic Pattern example for ZeroMQ 3.x,
 which is obsolete. Here in this PoC project, I implemented Titanic Pattern
 based on ZeroMQ 4.x version.
 
+## SMAMP
+<img src="./Screenshot/SMAMP.jpg" width="480px">
+
+Simple Microservice Architecture using Majordomo Protocol
 
  
