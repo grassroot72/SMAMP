@@ -31,7 +31,8 @@ Majordomo involves 3 parts, a client, a broker and a worker. It is a
 Service-Oriented Reliable Queuing protocol. It adds a "service name" to
 requests that the client sends, and asks workers to register for specific
 services. The broker, as its name implies, takes requests from clients and
-forwards the requests to the respective workers with specific "service name".
+forwards the requests to the respective workers with the specific
+"service name".
 
 ### *Titanic Pattern - Disconnected Reliability*
 <img src="./Screenshot/Titanic.jpg" width="480px">
