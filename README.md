@@ -51,15 +51,15 @@ based on ZeroMQ 4.x version.
 
 SMAMP uses 2 brokers. One of them forwards the clients' requests to application
 workers, and the other connects to the both application workers and DB workers.
-In SMAMP, the application broker acts as a application layer which dispatches the
-specific request to the respective workers which provide specific microservices.
-The DB broker acts as a infrastructure layer which replays the requests from
+In SMAMP, the application broker acts as an ***application layer*** which dispatches the
+specific requests to the respective workers which provide specific microservices.
+The DB broker acts as an ***infrastructure layer*** which replays the requests from
 the microservices to SQL or NoSQL workers.
 
 SMAMP aims to align with the Domain-Driven Design principle. In this PoC project,
 I use a "MM service" to simulate some functions in the Material Management Module
 of the ERP software. I use MongoDB as the database server which is connected to
-the "NoSQL service" worker. Inside the "MM service", the CRUD operations of
+the "NoSQL service" worker. Inside the "MM service", the **CRUD** operations of
 MongoDB are implemented.
 
 ### *Performance Turning*
