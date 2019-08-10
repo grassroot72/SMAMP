@@ -74,8 +74,9 @@ It is quite flexible to add more features to SMAMP.
 To improve performance of microservices, Redis server can be added as the cache.
 For DB services, Redis server can also be applied to improve **read** performace.
 
-If Titanic Pattern is used in SMAMP. Pieter Hintjens gave the following
-suggestions,
+If Titanic Pattern is used in SMAMP, some recommendations can be adopted.
+
+Pieter Hintjens gave the following suggestions,
 
 >>*If you want to use Titanic in real cases, you'll rapidly be asking
 "how do we make this faster?"*
@@ -96,7 +97,7 @@ abstraction, ten to a thousand times over a raw disk file.*
 >>*If you want to make Titanic even more reliable, duplicate the requests to
 a second server, which you'd place in a second location just far away enough
 to survive a nuclear attack on your primary location, yet not so far that you
- get too much latency.*
+get too much latency.*
 
 >>*If you want to make Titanic much faster and less reliable, store requests
 and replies purely in memory. This will give you the functionality of a
