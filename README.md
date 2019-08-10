@@ -56,7 +56,7 @@ specific requests to the respective workers which provide specific microservices
 The DB broker acts as an ***infrastructure layer*** which replays the requests from
 the microservices to SQL or NoSQL workers.
 
-SMAMP aims to align with the Domain-Driven Design principle. In this PoC project,
+SMAMP aims to align with the **Domain-Driven Design** principle. In this PoC project,
 I use a "MM service" to simulate some functions in the Material Management Module
 of the ERP software. I use MongoDB as the database server which is connected to
 the "NoSQL service" worker. Inside the "MM service", the **CRUD** operations of
@@ -77,12 +77,12 @@ For DB services, Redis server can also be applied to improve **read** performace
 If Titanic Pattern is used in SMAMP. Pieter Hintjens gave the following
 suggestions,
 
->>*If you want to use Titanic in real cases, you'll rapidly be asking 
+>>*If you want to use Titanic in real cases, you'll rapidly be asking
 "how do we make this faster?"*
 
 >>*Here's what I'd do, starting with the example implementation:*
 
->>   - Use a single disk file for all data, rather than multiple files. Operating systems are usually better at handling a few large files than many smaller ones.
+>>  - Use a single disk file for all data, rather than multiple files. Operating systems are usually better at handling a few large files than many smaller ones.
 >>  - Organize that disk file as a circular buffer so that new requests can be written contiguously (with very occasional wraparound). One thread, writing full speed to a disk file, can work rapidly.
 >>  - Keep the index in memory and rebuild the index at startup time, from the disk buffer. This saves the extra disk head flutter needed to keep the index fully safe on disk. You would want an fsync after every message, or every N milliseconds if you were prepared to lose the last M messages in case of a system failure.
 >>  - Use a solid-state drive rather than spinning iron oxide platters.
