@@ -32,7 +32,20 @@ Majordomo involves 3 parts, a client, a broker and a worker. It is a
 Service-Oriented Reliable Queuing protocol. It adds a "service name" to
 requests that the client sends, and asks workers to register for specific
 services. The broker, as its name implies, takes requests from clients and
-forwards the requests to respective workers with specific "service names". 
+forwards the requests to the respective workers with specific "service name". 
 
-
+### Titanic Pattern - Disconnected Reliability
 <img src="./Screenshot/Titanic.jpg" width="480px">
+
+Majordomo is a "reliable" message broker, but in reality, for all the
+enterprise messaging systems, persistence is a 'must' feature. However,
+performance drops a lot due to this persistence feature, it should be
+acknowledged accordingly.
+
+Titanic Pattern can be treated as Majordomo Pattern with persistence. 
+The office ZeroMQ guide only includes a Titanic Pattern example for ZeroMQ 3.x,
+which is obsolete. Here in this PoC project, I implemented Titanic Pattern
+based on ZeroMQ 4.x version.
+
+
+ 
