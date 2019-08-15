@@ -26,7 +26,7 @@ s_mongodb_engine_new(int verbose)
   session = mdp_worker_new("tcp://localhost:8888", "MongoDB", verbose);
 
   mongoc_init();
-  /* Connects to a mongodb database or the PRIMARY of a mongodb replica set */
+  /* Connects to a mongodb database or a mongodb replica set's PRIMARY node */
   client = mongoc_client_new("mongodb://localhost:30001/?appname=mongodb_engine");
 
   self->session = session;
