@@ -78,6 +78,10 @@ microservices can be put together.
 In addition to use multiple workers, Redis server can be added as the cache.
 For DB services, Redis server can also be applied to improve **read** performace.
 
+Another way of improving performance is to dispatch **read** and **write** requests
+to the respective workers through "**read**" and "**write**" brokers.
+
+
 If Titanic Pattern is used in SMAMP, some recommendations can be adopted.
 
 Pieter Hintjens gave the following suggestions,
