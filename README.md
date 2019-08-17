@@ -72,8 +72,9 @@ It is quite flexible to add more features to SMAMP.
 
 ### *Performance Turning*
 
-As **X-Axis** of **AFK Scale Cube** suggested, to improve performance of SMAMP,
-multiple workers which provide the same microservices can be put up.
+As the **X-Axis** of **AFK Scale Cube** suggested, to improve performance of SMAMP,
+multiple workers which provide the same microservices can be put up to balance the
+workload.
 
 In addition to use multiple workers, Redis server can be added as the cache.
 For DB services, Redis server can also be applied to improve **read** performace.
