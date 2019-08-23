@@ -149,5 +149,18 @@ d88d9e592f04        host                host                local
 
 In this PoC project, I create the network for replica set using the following command:
 
-`$ docker network create my-mongo-cluster`
+```
+$ docker network create my-mongo-cluster
+```
+
+The new network should now be added to the list of networks:
+
+```
+$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+8ea1387e2450        bridge              bridge              local
+d88d9e592f04        host                host                local
+462893ca237e        my-mongo-cluster    bridge              local
+328759274a19        none                null                local
+```
 
