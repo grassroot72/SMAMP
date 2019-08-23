@@ -241,7 +241,7 @@ Then, start the **DB Broker**,
 $ ./mdp_broker tcp://*:8888
 ```
 
-Then, start the **mongodb_worker**,
+Then, start the **mongodb_worker** and maintain the connection to the MongoDB database,
 
 ```
 $ ./mongodb_worker
