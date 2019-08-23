@@ -164,3 +164,101 @@ d88d9e592f04        host                host                local
 328759274a19        none                null                local
 ```
 
+### *Setting up containers*
+
+To start up the first container, mongo1, run the command:
+
+```
+$ docker run \
+-p 30001:27017 \
+--name mongo1 \
+--net my-mongo-cluster \
+mongo mongod --replSet my-mongo-set
+```
+
+The other 2 containers,
+
+```
+$ docker run \
+-p 30002:27017 \
+--name mongo2 \
+--net my-mongo-cluster \
+mongo mongod --replSet my-mongo-set
+
+$ docker run \
+-p 30003:27017 \
+--name mongo3 \
+--net my-mongo-cluster \
+mongo mongod --replSet my-mongo-set
+```
+
+### Setting up replication
+
+Connect to the mongo shell in any of the containers, ex, mongo1.
+In the mongo shell, create the configuration first,
+
+```
+MongoDB shell version v4.0.10
+> db = (new Mongo('localhost:27017')).getDB('mydb')
+mydb
+> config = {
+  	"_id" : "my-mongo-set",
+  	"members" : [
+  		{
+  			"_id" : 0,
+  			"host" : "mongo1:27017"
+  		},
+  		{
+  			"_id" : 1,
+  			"host" : "mongo2:27017"
+  		},
+  		{
+  			"_id" : 2,
+  			"host" : "mongo3:27017"
+  		}
+  	]
+  }
+```
+
+Then, start the replica set by the follow command:
+
+```
+> rs.initiate(config)
+{ "ok" : 1 }
+```
+
+### *Running the Demo*
+
+First, jump into the SMAMP directory and start the **Application Broker**,
+
+```
+$ ./mdp_broker
+```
+
+Then, start the **DB Broker**,
+
+```
+$ ./mdp_broker tcp://*:8888
+```
+
+Then, start the **mongodb_worker**,
+
+```
+$ ./mongodb_worker
+```
+
+and start **mm_worker** (multiple mm_workers can be started here).
+
+```
+$ ./mm_client
+```
+
+Now start the **mm_client** to test the SMAMP, the requests should be sent from
+**mm_client** through **Application Broker** to **mm_worker(s)**, the **mm_worker(s)**
+translates the requests to MongoDB queries and sent them to **mongodb_worker** through
+**DB Broker**. The path of the responses is just the reverse order of the requests'
+path.
+
+Finally, some successful message should appear in the console where the mm_client is
+executed.
+
