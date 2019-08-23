@@ -134,4 +134,16 @@ replica set is used. The replica set is created using Docker.
 3 containers are used in this MongoDB replica set architecture.
 <img src="./Screenshot/MongoDB_replica_set.png" width="480px">
 
-`Here comes the code block`
+
+### *Setting up the network*
+
+To see the current network, run the command:
+`$ docker network ls`
+`NETWORK ID          NAME                DRIVER              SCOPE`
+`8ea1387e2450        bridge              bridge              local`
+`d88d9e592f04        host                host                local`
+`328759274a19        none                null                local`
+
+In this PoC project, I create the network for replica set using the following command:
+`$ docker network create my-mongo-cluster`
+
