@@ -259,9 +259,9 @@ Now start the **mm_client** to test the SMAMP,
 $ ./mm_client
 ```
 
-The requests should be sent from **mm_client** through **Application Broker** to
+The requests are sent from the **mm_client** through the **Application Broker** to the
 **mm_worker(s)**, the **mm_worker(s)** translate(s) the requests to MongoDB queries
-and sent them to **mongodb_worker** through **DB Broker**.
+and sent them to the **mongodb_worker** through the **DB Broker**.
 
 The response path contains all the stops in the request path, but in the reverse order.
 
