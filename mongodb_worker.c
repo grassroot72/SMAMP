@@ -204,6 +204,7 @@ s_mongodb_handle_request(mongodb_engine_t *self, zmsg_t *request, zframe_t *repl
   zmsg_t *report;
   mongoc_collection_t *coll;
 
+  /* db is obtained from mm_worker's request */
   db = zmsg_popstr(request);
   collection = zmsg_popstr(request);
   operation = zmsg_popstr(request);
