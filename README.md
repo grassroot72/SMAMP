@@ -250,15 +250,21 @@ $ ./mongodb_worker
 and start **mm_worker** (multiple mm_workers can be started here).
 
 ```
+$ ./mm_worker
+```
+
+Now start the **mm_client** to test the SMAMP, 
+
+```
 $ ./mm_client
 ```
 
-Now start the **mm_client** to test the SMAMP, the requests should be sent from
-**mm_client** through **Application Broker** to **mm_worker(s)**, the **mm_worker(s)**
-translates the requests to MongoDB queries and sent them to **mongodb_worker** through
-**DB Broker**. The path of the responses is just the reverse order of the requests'
-path.
+The requests should be sent from **mm_client** through **Application Broker** to
+**mm_worker(s)**, the **mm_worker(s)** translate(s) the requests to MongoDB queries
+and sent them to **mongodb_worker** through **DB Broker**.
 
-Finally, some successful message should appear in the console where the mm_client is
-executed.
+The response path contains all the stops in the request path, but in the reverse order.
+
+Finally, some successful message should appear in the console where the **mm_client**
+is executed.
 
