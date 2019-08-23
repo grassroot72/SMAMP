@@ -192,7 +192,7 @@ $ docker run \
 mongo mongod --replSet my-mongo-set
 ```
 
-### Setting up replication
+### *Setting up replication*
 
 Connect to the mongo shell in any of the containers, ex, mongo1.
 In the mongo shell, create the configuration first,
