@@ -247,7 +247,7 @@ Then, start the **mongodb_worker** and maintain the connection to the MongoDB da
 $ ./mongodb_worker
 ```
 
-and start **mm_worker** (multiple mm_workers can be started here).
+and start the **mm_worker** (multiple mm_workers can be started here).
 
 ```
 $ ./mm_worker
