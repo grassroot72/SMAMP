@@ -125,3 +125,13 @@ server itself.*
 Apart from what Pieter suggested, optimising the code to manipulate linux
 Page Cache can also be considered to improve the IO performace. This technique
 is already used in Apache Kafka.
+
+## Demo Environment
+
+The demo environment requires a MongoDB database. In this PoC project, the MongoDB
+replica set is used. The replica set is created using Docker.
+
+3 containers are used in this MongoDB replica set architecture.
+<img src="./Screenshot/MongoDB_replica_set.png" width="480px">
+
+`Here comes the code block`
