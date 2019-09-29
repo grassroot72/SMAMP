@@ -43,7 +43,7 @@ performance drops a lot due to this persistence feature, it should be
 acknowledged accordingly.
 
 Titanic Pattern can be treated as Majordomo Pattern with persistence.
-The office ZeroMQ guide only includes a Titanic Pattern example for ZeroMQ 3.x,
+The official ZeroMQ guide only includes a Titanic Pattern example for ZeroMQ 3.x,
 which is obsolete. Here in this PoC project, I implemented Titanic Pattern
 based on ZeroMQ 4.x version.
 
