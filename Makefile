@@ -1,7 +1,7 @@
 # SMAM makefile
 
 CC = gcc
-CFLAGS = -O2 -Wall `pkg-config --cflags libmongoc-1.0`
+CFLAGS = -O2 -Wall `pkg-config --cflags libmongoc-1.0` -D DEMO
 LDFLAGS = -lzmq -lczmq -luuid `pkg-config --libs libmongoc-1.0`
 
 BROKER_OBJS = mdp_broker.o
