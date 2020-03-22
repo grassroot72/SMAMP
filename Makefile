@@ -18,29 +18,35 @@ MONGODB_WORKER_EXE = mongodb_worker
 TITANIC_EXE = titanic
 TICLIENT_EXE = ticlient
 
+EXES = $(BROKER_EXE) \
+       $(MM_WORKER_EXE) \
+       $(MM_CLIENT_EXE) \
+       $(TITANIC_EXE) \
+       $(TICLIENT_EXE) \
+       $(MONGODB_WORKER_EXE)
 
-all: $(BROKER_EXE) $(MM_WORKER_EXE) $(MM_CLIENT_EXE) $(TITANIC_EXE) $(TICLIENT_EXE) $(MONGODB_WORKER_EXE)
+all: $(EXES)
 
 %.o: %.c
-	$(CC) -c $< $(CFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS)
 
 $(BROKER_EXE): $(BROKER_OBJS)
-	$(CC) -o $@ $(BROKER_OBJS) $(LDFLAGS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(MM_WORKER_EXE): $(MM_WORKER_OBJS)
-	$(CC) -o $@ $(MM_WORKER_OBJS) $(LDFLAGS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(MM_CLIENT_EXE): $(MM_CLIENT_OBJS)
-	$(CC) -o $@ $(MM_CLIENT_OBJS) $(LDFLAGS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(MONGODB_WORKER_EXE): $(MONGODB_WORKER_OBJS)
-	$(CC) -o $@ $(MONGODB_WORKER_OBJS) $(LDFLAGS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(TITANIC_EXE): $(TITANIC_OBJS)
-	$(CC) -o $@ $(TITANIC_OBJS) $(LDFLAGS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(TICLIENT_EXE): $(TICLIENT_OBJS)
-	$(CC) -o $@ $(TICLIENT_OBJS) $(LDFLAGS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 clean:
-	rm -f *.o $(BROKER_EXE) $(MM_WORKER_EXE) $(MM_CLIENT_EXE) $(MONGODB_WORKER_EXE) $(TITANIC_EXE) $(TICLIENT_EXE)
+	$(RM) *.o $(EXES)
