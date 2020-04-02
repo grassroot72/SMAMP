@@ -228,7 +228,8 @@ s_mm_handle_request(mm_engine_t *self, zmsg_t *request, zframe_t *reply_to)
 
 /*
  * This worker simulates the the Purchase Order (PO) processing engine in an
- * ERP Material Management (MM) service and return the results back to the client
+ * ERP Material Management (MM) service and return the results back to the
+ * client
  */
 int main(int argc, char *argv[])
 {

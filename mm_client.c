@@ -77,7 +77,7 @@ int main (int argc, char *argv[])
   verbose = (argc > 1 && streq(argv[1], "-v"));
   session = mdp_client_new("tcp://localhost:5555", verbose);
 
-  /* REST: POST */
+  /* POST */
   /* POSave operation which triggers a CREATE in the mongodb worker */
   doc = bson_new();
   BSON_APPEND_UTF8(doc, "k_material", "cpu");
@@ -86,7 +86,7 @@ int main (int argc, char *argv[])
   s_reply_display(reply);
   zmsg_destroy(&reply);
 
-  /* REST: GET */
+  /* GET */
   /* POSelect operation which triggers a RETRIEVE in the mongodb worker */
   query = bson_new();
   BSON_APPEND_UTF8(query, "k_material", "cpu");
@@ -95,7 +95,7 @@ int main (int argc, char *argv[])
   s_reply_display(reply);
   zmsg_destroy(&reply);
 
-  /* REST: PUT */
+  /* PUT */
   /* POUpdate operation which triggers a UPDATE in the mongodb worker */
   query = bson_new();
   BSON_APPEND_UTF8(query, "k_material", "cpu");
@@ -107,7 +107,7 @@ int main (int argc, char *argv[])
   s_reply_display(reply);
   zmsg_destroy(&reply);
 
-  /* REST: DELETE */
+  /* DELETE */
   /* PODelete operation which triggers a DELETE in the mongodb worker */
   query = bson_new();
   BSON_APPEND_UTF8(query, "k_material", "cpu");
