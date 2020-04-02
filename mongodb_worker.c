@@ -245,8 +245,8 @@ s_mongodb_handle_request(mongodb_engine_t *self, zmsg_t *request, zframe_t *repl
 }
 
 /*
- * This worker provides the simple CRUD services of Mongodb and sends results back
- * to the respective clients
+ * This worker provides the simple CRUD services of Mongodb and sends
+ * results back to the respective clients
  */
 int main(int argc, char *argv[])
 {
